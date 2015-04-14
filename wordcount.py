@@ -5,6 +5,10 @@
 # 4. each time a word appears update its value by 1
 # 5. end up with dictionary of format word: count, print results
 
+from sys import argv
+
+script, filename = argv
+
 def count_words(filename):
     text_file = open(filename)
     text = text_file.read()
@@ -29,4 +33,4 @@ def print_wordcount(word_counts):
     for word, count in word_counts.iteritems():
         print word, count
 
-print_wordcount(count_words("test.txt"))
+print_wordcount(count_words(filename))
