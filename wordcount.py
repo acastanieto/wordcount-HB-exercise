@@ -36,6 +36,11 @@ def sort_and_print(word_counts):
     for word, count in sorted_tuples_by_count:
         print word, count
 
+    # another way without unpacking:    
+    #for pair in sorted_tuples_by_count:
+     #   print "%s %d" % (pair)
+
+    #     
     # sorted_wordcounts = sorted(word_counts.items(), key=lambda pair:pair[1], reverse=True)
     # for word, count in sorted_wordcounts:
     #     print word, count
