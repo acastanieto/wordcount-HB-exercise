@@ -8,8 +8,12 @@
 def count_words(filename):
     text_file = open(filename)
     text = text_file.read()
-    text = text.rstrip().replace("\n", " ")
-    word_list = text.split(" ")
+    text = text.rstrip().lower().replace("\n", " ")
+    no_punct = ""
+    for char in text:
+        if char.isalpha() or char == " ":
+            no_punct += char
+    word_list = no_punct.split(" ")
 
     word_counts = {}
     for word in word_list:
