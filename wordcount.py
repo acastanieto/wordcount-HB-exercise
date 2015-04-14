@@ -6,6 +6,7 @@
 # 5. end up with dictionary of format word: count, print results
 
 from sys import argv
+from collections import Counter
 
 script, filename = argv
 
@@ -19,12 +20,17 @@ def count_words(filename):
             no_punct += char
     word_list = no_punct.split(" ")
 
-    word_counts = {}
-    for word in word_list:
-        if word not in word_counts:
-            word_counts[word] = 1
-        else:
-            word_counts[word] += 1
+    print word_list
+
+    word_counts = Counter(word_list)
+    # for word in word_list:
+    #     if word not in word_counts:
+    #         word_counts[word] = c[word]
+
+        # if word not in word_counts:
+        #     word_counts[word] = 1
+        # else:
+        #     word_counts[word] += 1
 
     return word_counts
 
